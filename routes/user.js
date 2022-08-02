@@ -16,7 +16,7 @@ router.route("/login").post((req, res) => {
       if (user) {
         bcrypt.compare(password, user.password, function (err, data) {
           if (err) {
-            res.status(400).json({
+            res.status(200).json({
               message: "error",
             });
           }
@@ -26,13 +26,13 @@ router.route("/login").post((req, res) => {
               userid: user._id,
             });
           } else {
-            res.status(404).json({
+            res.status(200).json({
               message: "Failed",
             });
           }
         });
       } else {
-        res.status(404).json({
+        res.status(200).json({
           message: "User Does Not Exist",
         });
       }
@@ -50,7 +50,7 @@ router.route("/signup").post((req, res) => {
       });
     } else {
       if (user) {
-        res.status(404).json({
+        res.status(200).json({
           message: "User Already Exists",
         });
       } else {
