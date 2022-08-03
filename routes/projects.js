@@ -81,4 +81,16 @@ router.route("/update").post((req, res) => {
     });
 });
 
+router.route("/get/single").post((req, res) => {
+  const { projectid } = req.body;
+  projectsmodel
+    .findOne({ _id: projectid })
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 module.exports = router;

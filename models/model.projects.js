@@ -7,7 +7,7 @@ const Projects = new Schema({
   pic: String,
   description: String,
   findid: String,
-  techstacks: [],
+  techstacks: String,
 });
 
 module.exports = mongoose.model("projects", Projects);
