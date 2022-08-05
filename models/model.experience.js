@@ -9,8 +9,8 @@ const Experience = new Schema({
   endingDate: String,
   findid: String,
   description: String,
-  techstacksused: [],
-  douments: [],
+  techstacksused: String,
+  douments: String,
 });
 
 module.exports = mongoose.model("experience", Experience);

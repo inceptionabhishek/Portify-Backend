@@ -106,5 +106,16 @@ router.route("/update").post((req, res) => {
       console.log(err);
     });
 });
+router.route("/get/single").post((req, res) => {
+  const { experienceid } = req.body;
+  experiencemodel
+    .findOne({ _id: experienceid })
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
 module.exports = router;

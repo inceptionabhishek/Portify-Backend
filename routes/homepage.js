@@ -15,7 +15,6 @@ router.route("/get/data").post((req, res) => {
 router.route("/add/data").post((req, res) => {
   const { Name, currentTitle, aboutme, picture, collegeData, findid, resume } =
     req.body;
-  newhomepage.find({ findid: findid }).then((data) => {});
   const newhomepage = new homepagemodel({
     Name,
     currentTitle,
@@ -42,6 +41,7 @@ router.route("/add/data").post((req, res) => {
 router.route("/update/data").post((req, res) => {
   const { Name, currentTitle, aboutme, picture, collegeData, findid, resume } =
     req.body;
+  console.log(picture);
   homepagemodel
     .findOneAndUpdate(
       { findid: findid },
